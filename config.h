@@ -82,7 +82,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]     = { "alacritty", NULL };
-static const char *browsercmd[]  = { "firefox", NULL };
+static const char *firefox[]  = { "firefox", NULL };
+static const char *chrome[]  = { "google-chrome-stable", NULL };
 static const char *code[] = {"code",NULL};
 
 static const char *ligthup[]     = { "/home/amy/scripts/ligthup.sh",  NULL };
@@ -104,7 +105,8 @@ static Key keys[] = {
 	/* modifier            key                      function        argument */
 	{ MODKEY,              XK_s,                    spawn,          {.v = dmenucmd } },
 	{ MODKEY,              XK_Return,               spawn,          {.v = termcmd } },
-	{ MODKEY,              XK_a,                    spawn,          {.v = browsercmd } },
+	{ MODKEY,              XK_f,                    spawn,          {.v = chrome } },
+	{ MODKEY,              XK_a,                    spawn,          {.v = firefox } },
 	{ MODKEY,              XK_c,                    spawn,          {.v = code } },
 	{ MODKEY|ShiftMask,    XK_p,                    spawn,          {.v = suspendcmd } },
 	{ MODKEY|ControlMask,  XK_s,                    spawn,          {.v = sktogglecmd } },
