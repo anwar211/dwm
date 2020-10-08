@@ -97,7 +97,7 @@ static const char *sktogglecmd[]   = { "/home/david/scripts/sck-tog.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
-static const char *suspendcmd[]    = { "/home/david/scripts/suspend.sh", NULL };
+static const char *suspendcmd[]    = { "/home/amy/scripts/suspend.sh", NULL };
 
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 
