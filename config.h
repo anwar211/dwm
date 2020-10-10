@@ -81,25 +81,23 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]     = { "alacritty", NULL };
-static const char *firefox[]  = { "firefox", NULL };
-static const char *chrome[]  = { "google-chrome-stable", NULL };
-static const char *code[] = {"code",NULL};
+static const char *termcmd[]    = { "alacritty", NULL };
+static const char *firefox[]    = { "firefox", NULL };
+static const char *chrome[]     = { "google-chrome-stable", NULL };
+static const char *code[]       = {"code",NULL};
+static const char *flameshot[]  = { "flameshot", "gui", NULL };
 
 static const char *ligthup[]     = { "/home/amy/scripts/ligthup.sh",  NULL };
 static const char *ligthdown[]   = { "/home/amy/scripts/ligthdown.sh",  NULL };
 static const char *upvol[]       = { "/home/amy/scripts/vol-up.sh",  NULL };
 static const char *downvol[]     = { "/home/amy/scripts/vol-down.sh",  NULL };
 static const char *mutevol[]     = { "/home/david/scripts/vol-toggle.sh",  NULL };
-
-static const char *wpcmd[]         = { "/home/david/scripts/wp-change.sh", NULL };
-static const char *sktogglecmd[]   = { "/home/david/scripts/sck-tog.sh", NULL };
+static const char *suspendcmd[]    = { "/home/amy/scripts/suspend.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
-static const char *suspendcmd[]    = { "/home/amy/scripts/suspend.sh", NULL };
-
-static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
+static const char *wpcmd[]         = { "/home/david/scripts/wp-change.sh", NULL };
+static const char *sktogglecmd[]   = { "/home/david/scripts/sck-tog.sh", NULL };
 
 static Key keys[] = {
 	/* modifier            key                      function        argument */
@@ -115,7 +113,7 @@ static Key keys[] = {
 	{ MODKEY,              XK_backslash,            spawn,          {.v = mutevol } },
 	{ MODKEY,              XK_bracketright,         spawn,          {.v = upvol   } },
 	{ MODKEY,              XK_b,                    spawn,          {.v = wpcmd } },
-	{ MODKEY,              XK_p,                    spawn,          {.v = screenshotcmd } },
+	{ MODKEY,              XK_p,                    spawn,          {.v = flameshot } },
 	{ MODKEY|ShiftMask,    XK_k,                    rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,    XK_i,                    rotatestack,    {.i = -1 } },
 	{ MODKEY,              XK_k,                    focusstack,     {.i = +1 } },
