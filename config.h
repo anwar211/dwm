@@ -17,8 +17,8 @@ static const int smartgaps          = 1;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "JetBrainsMono:size=13" };
-static const char dmenufont[]       = "JetBrainsMono:size=13";
+static const char *fonts[]          = { "JetBrainsMono:size=12" };
+static const char dmenufont[]       = "JetBrainsMono:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -86,6 +86,7 @@ static const char *termcmd[]    = { "alacritty", NULL };
 static const char *firefox[]    = { "firefox", NULL };
 static const char *chrome[]     = { "google-chrome-stable", NULL };
 static const char *code[]       = { "code",NULL};
+static const char *tim[]        = { "/opt/deepinwine/apps/Deepin-TIM/run.sh",NULL};
 static const char *flameshot[]  = { "flameshot", "gui", NULL };
 
 static const char *ligthup[]     = { "/home/amy/scripts/ligthup.sh",  NULL };
@@ -93,7 +94,8 @@ static const char *ligthdown[]   = { "/home/amy/scripts/ligthdown.sh",  NULL };
 static const char *upvol[]       = { "/home/amy/scripts/vol-up.sh",  NULL };
 static const char *downvol[]     = { "/home/amy/scripts/vol-down.sh",  NULL };
 static const char *mutevol[]     = { "/home/david/scripts/vol-toggle.sh",  NULL };
-static const char *suspendcmd[]    = { "/home/amy/scripts/suspend.sh", NULL };
+static const char *suspendcmd[]  = { "/home/amy/scripts/suspend.sh", NULL };
+
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
@@ -104,8 +106,10 @@ static Key keys[] = {
 	/* modifier            key                      function        argument */
 	{ MODKEY,              XK_s,                    spawn,          {.v = dmenucmd } },
 	{ MODKEY,              XK_Return,               spawn,          {.v = termcmd } },
+	{ MODKEY,              XK_a,                    spawn,          {.v = chrome } },
 	{ MODKEY,              XK_f,                    spawn,          {.v = firefox } },
 	{ MODKEY,              XK_d,                    spawn,          {.v = code } },
+	{ MODKEY,              XK_q,                    spawn,          {.v = tim } },
 	{ MODKEY|ShiftMask,    XK_p,                    spawn,          {.v = suspendcmd } },
 	{ MODKEY|ControlMask,  XK_s,                    spawn,          {.v = sktogglecmd } },
 	{ MODKEY|ShiftMask,    XK_bracketleft,          spawn,          {.v = ligthdown } },
@@ -155,7 +159,7 @@ static Key keys[] = {
 	TAGKEYS(               XK_7,                      6)
 	TAGKEYS(               XK_8,                      7)
 	TAGKEYS(               XK_9,                      8)
-	{ MODKEY|ControlMask,  XK_q,      quit,           {0} },
+	{ MODKEY|ControlMask,  XK_c,      quit,        {0} },
 };
 
 /* button definitions */
